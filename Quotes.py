@@ -1,22 +1,32 @@
 import flet as ft
-import random
+
+
+quotes = {
+    "original": "imagine hurting this guys dawg - john wick.",
+    "Abkhazian": "ухаҿы иааг абри аҷкәынцәа ргәаҟра доуг - џьон уик",
+    "Icelandic": "ímyndaðu þér að meiða þennan gaur dawg - john wick"
+}
+
+languages = "original", "Abkhazian", "french"
+translate = languages
 
 def main(page: ft.Page):
-    page.window.height = 300
-    page.window.height = 300
-    page.add("Ask button", )
-    page.vertical_alignment  = ft.MainAxisAlignment.END
-    page.title = "Magic 8-Ball"
-    responses = ["Yes", "No", "Maybe", "Ask again later", "Definitely", "Absolutely not"]
-    random.randint (0,300) = responses = ["Sorry i can't help you with that", "Heck naw"]
-
-    def ask_8_ball(e):
-        response_text.value = random.choice(responses) if question_input.value.strip() else "Please enter a question."
-        page.update()
+    page.title = "Quotes and translator"
+    page.width = 300
+    page.height = 300
+    quote = ft.Text(value=quotes["original"], size=18)
     
-    question_input = ft.TextField(label="Your question", width=300) 
-    ask_button = ft.ElevatedButton("Ask the 8-Ball", on_click=ask_8_ball)
-    response_text = ft.Text(size=20, weight=ft.FontWeight.BOLD, color=ft.colors.BLUE)
-    page.add(ft.Column([question_input, ask_button, response_text], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER))
+    def Translator (e):
+     quote.value = (languages.values)
 
-ft.app(target=main)
+ft.app(target = main)
+
+radio_buttons = ft.Row
+
+ft.Row = ([
+
+ft.Radio(value="original", label="original", on_change=translate),
+ft.Radio(value="Abkhazian", label="Abkhazian", on_change=translate),
+ft.Radio(value="Icelandic", label="Icelandic", on_change=translate)
+])
+ft.app(target = main)
